@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+html {
+  font-size: 16px;
+}
+
+/* Kanvas desain: 1920px / 16 = 120rem. Harus sama dengan CANVAS_WIDTH_REM di
+   src/lib/measure.ts dan SCALE.pc.designWidth di src/lib/flexible.ts. */
+@utility canvas {
+  width: 120rem;
+  margin-inline: auto;
+}
+
+@font-face {
+  font-family: "Inpin";
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url("./assets/font/inpin.ttf") format("truetype");
+}
+
+@keyframes speaker-pulse {
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.speaker-animation {
+  animation: speaker-pulse 0.4s ease-in-out infinite;
+}
